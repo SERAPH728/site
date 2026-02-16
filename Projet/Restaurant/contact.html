@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Délices - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🍽️ Restaurant Délices</h1>
+            </div>
+            
+            <!-- Menu de navigation -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="apropos.html" class="nav-link">À propos</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            
+            <button class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section Contact -->
+    <section class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+        <div class="contact-hero-content">
+            <h1 class="contact-hero-title">Contactez-Nous</h1>
+            <p class="contact-hero-subtitle">Nous sommes à votre écoute</p>
+        </div>
+    </section>
+
+    <!-- Section Informations de Contact -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Adresse</h3>
+                    <p>123 Boulevard Anfa<br>Casablanca, Maroc</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Téléphone</h3>
+                    <p>+212 690702486</p>
+                    <p class="small-text">Lun - Dim : 11h - 23h</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>abderrahmanebrini66@gmail.com</p>
+                    <p class="small-text">Réponse sous 24h</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horaires</h3>
+                    <p>Lun - Dim<br>11h00 - 23h00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formulaire de Contact -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-form-wrapper">
+                    <h2 class="section-title">Envoyez-nous un message</h2>
+                    <div class="gold-divider"></div>
+                    <p class="form-description">Vous avez une question, une suggestion ou souhaitez réserver une table ? Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="reservation">Réservation</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="evenement">Organisation d'événement</option>
+                                <option value="reclamation">Réclamation</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span>Envoyer le message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Carte et informations supplémentaires -->
+                <div class="contact-sidebar">
+                    <div class="contact-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7537535805745!2d-7.6289735!3d33.5892108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d2872c46c25b%3A0x54f41e7d3d3c3b88!2sCasablanca%2C%20Morocco!5e0!3m2!1sen!2s!4v1234567890"
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    
+                    <div class="quick-contact">
+                        <h3>Réservation Rapide</h3>
+                        <p>Pour une réservation immédiate, contactez-nous directement :</p>
+                        <div class="quick-contact-btns">
+                            <a href="tel:+212690702486" class="quick-btn">
+                                <i class="fas fa-phone"></i>
+                                Appelez-nous
+                            </a>
+                            <a href="https://wa.me/212690702486" class="quick-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h3>Suivez-nous</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61579912872839" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.instagram.com/s___0_9/" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://wa.me/212690702486" class="social-link whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="gold-divider"></div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Comment puis-je réserver une table ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Vous pouvez réserver une table en nous appelant directement au +212 671 325 4023, via WhatsApp, ou en remplissant le formulaire de contact ci-dessus. Nous vous recommandons de réserver au moins 24h à l'avance, surtout pour les week-ends.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Proposez-vous un service de livraison ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, nous offrons un service de livraison gratuite partout à Casablanca en moins d'une heure. Vous pouvez commander via notre site web ou en nous appelant directement.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Acceptez-vous les événements privés ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolument ! Nous organisons des événements privés : anniversaires, réunions d'affaires, mariages, etc. Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Proposez-vous des options végétariennes/vegan ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, notre menu propose plusieurs options végétariennes et vegan. N'hésitez pas à nous informer de vos préférences alimentaires lors de votre réservation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2>Restaurant Délice</h2>
+                <p>Votre destination pour une cuisine exceptionnelle et des moments inoubliables.</p>
+                <div class="delivery">🚚 Livraison gratuite en 1h partout à Casablanca</div>
+            </div>
+
+            <div class="footer-box">
+                <h2>Contact</h2>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> 123 Anfa, Casablanca</div>
+                <div class="contact-item"><i class="fas fa-phone"></i> +212 690702486</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> abderrahmanebrini66@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-clock"></i> Lun - Dim : 11h - 23h</div>
+            </div>
+
+            <div class="footer-box">
+                <h2>Suivez-nous</h2>
+                <div class="social-icons">
+                    <a href="https://wa.me/212690702486" id="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/s___0_9/" id="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61579912872839" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <p style="margin-top:15px;">WhatsApp: +212690702486<br>Instagram: @s___0_9</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">© 2025 Restaurant Délice. Tous droits réservés.</div>
+    </footer>
+
+    <!-- Bouton WhatsApp Flottant -->
+    <a href="https://wa.me/212690702486" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 32 32" class="whatsapp-icon">
+            <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.203 1.393 1.387-5.16-0.321-0.527c-1.362-2.24-2.086-4.83-2.086-7.477 0-7.384 6.003-13.387 13.387-13.387s13.387 6.003 13.387 13.387c0 7.384-6.003 13.387-13.387 13.387zM21.871 18.54c-0.288-0.144-1.704-0.841-1.968-0.937s-0.456-0.144-0.648 0.144-0.744 0.937-0.912 1.128c-0.168 0.192-0.336 0.216-0.624 0.072s-1.217-0.449-2.317-1.429c-0.857-0.764-1.435-1.708-1.603-1.996s-0.018-0.443 0.126-0.587c0.13-0.13 0.288-0.336 0.432-0.504s0.192-0.288 0.288-0.48c0.096-0.192 0.048-0.36-0.024-0.504s-0.648-1.562-0.888-2.139c-0.234-0.562-0.472-0.486-0.648-0.495-0.168-0.008-0.36-0.010-0.552-0.010s-0.504 0.072-0.768 0.36c-0.264 0.288-1.008 0.984-1.008 2.4s1.032 2.784 1.176 2.976c0.144 0.192 2.034 3.104 4.928 4.352 0.688 0.296 1.225 0.473 1.643 0.605 0.691 0.22 1.32 0.189 1.816 0.115 0.554-0.083 1.704-0.697 1.944-1.368s0.24-1.248 0.168-1.368c-0.072-0.12-0.264-0.192-0.552-0.336z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        // Gestion du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Création du message WhatsApp
+            const whatsappMessage = `Bonjour, je suis ${firstName} ${lastName}.%0A%0AEmail: ${email}%0ATéléphone: ${phone}%0ASujet: ${subject}%0A%0AMessage:%0A${message}`;
+            
+            // Redirection vers WhatsApp
+            window.open(`https://wa.me/212690702486?text=${whatsappMessage}`, '_blank');
+            
+            // Réinitialiser le formulaire
+            this.reset();
+            alert('Votre message va être envoyé via WhatsApp !');
+        });
+        
+        // Gestion des FAQ accordéons
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Fermer tous les autres
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Ouvrir celui-ci s'il n'était pas actif
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

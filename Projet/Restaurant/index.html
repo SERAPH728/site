@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Restaurant Délices - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Écran de chargement 3D -->
+    <div class="loading-screen-3d" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-logo-3d">
+                <span class="logo-letter">D</span>
+                <span class="logo-letter">É</span>
+                <span class="logo-letter">L</span>
+                <span class="logo-letter">I</span>
+                <span class="logo-letter">C</span>
+                <span class="logo-letter">E</span>
+                <span class="logo-letter">S</span>
+            </div>
+            <div class="loading-bar-3d">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Préparation de votre expérience...</div>
+        </div>
+    </div>
+
+    <!-- Section d'entrée 3D -->
+    <div class="hero-3d-container" id="hero3DContainer">
+        <!-- Canvas Three.js -->
+        <canvas id="canvas3d"></canvas>
+        
+        <!-- Overlay gradient -->
+        <div class="overlay-3d"></div>
+
+        <!-- Particules dorées -->
+        <div class="gold-particles" id="goldParticles"></div>
+
+        <!-- Contenu principal -->
+        <div class="hero-3d-content">
+            <div class="hero-top-ornament">✦</div>
+            
+            <h1 class="hero-3d-title">
+                <span class="title-line">DÉLICES</span>
+            </h1>
+            
+            <div class="hero-divider">
+                <span class="divider-ornament">◆</span>
+            </div>
+            
+            <p class="hero-3d-subtitle">Gastronomie d'Excellence</p>
+            <p class="hero-3d-tagline">Une expérience culinaire raffinée</p>
+            
+            <button class="hero-3d-btn" id="enterBtn">
+                <span class="btn-text">Découvrir notre menu</span>
+                <span class="btn-ornament">→</span>
+            </button>
+
+            <div class="hero-scroll-indicator">
+                <div class="scroll-icon"></div>
+                <span class="scroll-text-3d">Scroll</span>
+            </div>
+
+            <div class="hero-bottom-ornament">✧</div>
+        </div>
+    </div>
+
+    <!-- Contenu principal du site -->
+    <div class="main-content" id="mainContent">
+        <!-- Header avec navigation -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>🍽️ Restaurant Délices</h1>
+                </div>
+                
+                <!-- Menu de navigation -->
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link active">Accueil</a>
+                    <a href="apropos.html" class="nav-link">À propos</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un plat...">
+                    <button onclick="searchPlat()">🔍</button>
+                </div>
+                
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 Panier
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                
+                <button class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Slider -->
+        <section class="slider">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=400&fit=crop" alt="Plat 1">
+                    <div class="slide-text">
+                        <h2>Cuisine Gastronomique</h2>
+                        <p>Découvrez nos plats d'exception</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&h=400&fit=crop" alt="Plat 2">
+                    <div class="slide-text">
+                        <h2>Burgers Artisanaux</h2>
+                        <p>Préparés avec des ingrédients frais</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&h=400&fit=crop" alt="Plat 3">
+                    <div class="slide-text">
+                        <h2>Pizzas Italiennes</h2>
+                        <p>Authentiques et délicieuses</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1200&h=400&fit=crop" alt="Plat 4">
+                    <div class="slide-text">
+                        <h2>Sushis Frais</h2>
+                        <p>Préparés par nos chefs experts</p>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+        </section>
+
+        <!-- Catégories -->
+        <section class="categories">
+            <h2>Nos Catégories</h2>
+            <div class="category-list">
+                <button class="category-btn active" onclick="filterCategory('tous')">Tous</button>
+                <button class="category-btn" onclick="filterCategory('entrees')">Entrées</button>
+                <button class="category-btn" onclick="filterCategory('plats')">Plats Principaux</button>
+                <button class="category-btn" onclick="filterCategory('pizzas')">Pizzas</button>
+                <button class="category-btn" onclick="filterCategory('burgers')">Burgers</button>
+                <button class="category-btn" onclick="filterCategory('desserts')">Desserts</button>
+                <button class="category-btn" onclick="filterCategory('boissons')">Boissons</button>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <section class="menu">
+            <div class="menu-grid" id="menuGrid"></div>
+            
+            <!-- Pagination -->
+            <div class="pagination-container">
+                <div class="pagination">
+                    <button class="pagination-btn" id="prevBtn" onclick="changePage(-1)">
+                        <span>‹</span>
+                    </button>
+                    
+                    <div class="pagination-numbers" id="paginationNumbers"></div>
+                    
+                    <button class="pagination-btn" id="nextBtn" onclick="changePage(1)">
+                        <span>›</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="pagination-info">
+                <span id="paginationInfo"></span>
+            </div>
+        </section>
+
+        <!-- Panier Modal -->
+        <div class="cart-modal" id="cartModal">
+            <div class="cart-content">
+                <div class="cart-header">
+                    <h2>Mon Panier</h2>
+                    <button class="close-btn" onclick="toggleCart()">✕</button>
+                </div>
+
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-cart">Votre panier est vide</p>
+                </div>
+
+                <section class="checkout-section">
+                    <h3 class="checkout-title">Informations de livraison</h3>
+                    <form class="checkout-form" id="checkoutForm">
+                        <div class="form-group">
+                            <label for="prenom">Nom:</label>
+                            <input type="text" class="form-input" id="prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Prénom:</label>
+                            <input type="text" class="form-input" id="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Numéro de téléphone:</label>
+                            <input type="tel" class="form-input" id="telephone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adresse">Adresse:</label>
+                            <textarea class="form-input" id="adresse" required></textarea>
+                        </div>
+                    </form>
+                </section>
+
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <h3>Total: <span id="cartTotal">0.00dh</span></h3>
+                    </div>
+                    <button class="checkout-btn" id="confirmOrder">Confirmer la commande</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-box">
+                    <h2>Restaurant Délice</h2>
+                    <p>Votre destination pour une cuisine exceptionnelle et des moments inoubliables.</p>
+                    <div class="delivery">🚚 Livraison gratuite en 1h partout à Casablanca</div>
+                </div>
+
+                <div class="footer-box">
+                    <h2>Contact</h2>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> 123 Anfa, Casablanca</div>
+                    <div class="contact-item"><i class="fas fa-phone"></i> +212 690702486</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> abderrahmanebrini66@gmail.com</div>
+                    <div class="contact-item"><i class="fas fa-clock"></i> Lun - Dim : 11h - 23h</div>
+                </div>
+
+                <div class="footer-box">
+                    <h2>Suivez-nous</h2>
+                    <div class="social-icons">
+                        <a href="https://wa.me/212690702486" id="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/s___0_9/" id="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61579912872839" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <p style="margin-top:15px;">WhatsApp: +212690702486<br>Instagram: @s___0_9</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">© 2025 Restaurant Délice. Tous droits réservés.</div>
+        </footer>
+    </div>
+
+    <!-- Bouton WhatsApp Flottant -->
+    <a href="https://wa.me/212690702486" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 32 32" class="whatsapp-icon">
+            <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.203 1.393 1.387-5.16-0.321-0.527c-1.362-2.24-2.086-4.83-2.086-7.477 0-7.384 6.003-13.387 13.387-13.387s13.387 6.003 13.387 13.387c0 7.384-6.003 13.387-13.387 13.387zM21.871 18.54c-0.288-0.144-1.704-0.841-1.968-0.937s-0.456-0.144-0.648 0.144-0.744 0.937-0.912 1.128c-0.168 0.192-0.336 0.216-0.624 0.072s-1.217-0.449-2.317-1.429c-0.857-0.764-1.435-1.708-1.603-1.996s-0.018-0.443 0.126-0.587c0.13-0.13 0.288-0.336 0.432-0.504s0.192-0.288 0.288-0.48c0.096-0.192 0.048-0.36-0.024-0.504s-0.648-1.562-0.888-2.139c-0.234-0.562-0.472-0.486-0.648-0.495-0.168-0.008-0.36-0.010-0.552-0.010s-0.504 0.072-0.768 0.36c-0.264 0.288-1.008 0.984-1.008 2.4s1.032 2.784 1.176 2.976c0.144 0.192 2.034 3.104 4.928 4.352 0.688 0.296 1.225 0.473 1.643 0.605 0.691 0.22 1.32 0.189 1.816 0.115 0.554-0.083 1.704-0.697 1.944-1.368s0.24-1.248 0.168-1.368c-0.072-0.12-0.264-0.192-0.552-0.336z"/>
+        </svg>
+    </a>
+
+    <!-- Three.js depuis CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

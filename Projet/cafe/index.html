@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Café - Bienvenue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Intro 3D Cinématique -->
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="intro-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        
+        <div class="intro-content">
+            <div class="intro-logo">
+                <i class="fas fa-coffee"></i>
+            </div>
+            <h1 class="intro-title">Mon Café</h1>
+            <p class="intro-subtitle">L'Excellence du Café</p>
+        </div>
+        
+        <div class="intro-line"></div>
+    </div>
+
+    <!-- Contenu principal enveloppé -->
+    <div class="main-content-wrapper">
+    <!-- Header avec navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>Mon Café</span>
+            </div>
+            
+            <!-- Menu de navigation -->
+            <div class="nav-menu">
+                <a href="#" class="nav-link active" data-page="accueil">Accueil</a>
+                <a href="#" class="nav-link" data-page="apropos">À propos</a>
+                <a href="#" class="nav-link" data-page="contact">Contact</a>
+            </div>
+            
+            <div class="nav-controls">
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <button class="icon-btn" id="darkModeToggle" title="Mode sombre">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="icon-btn cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Accueil -->
+    <div class="page-content active" id="page-accueil">
+    <!-- Slider de photos -->
+    <section class="slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200" alt="Café 1">
+                <div class="slide-overlay">
+                    <h1>Bienvenue dans Notre Café</h1>
+                    <p>Le meilleur café de la ville</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200" alt="Café 2">
+                <div class="slide-overlay">
+                    <h1>Des Saveurs Uniques</h1>
+                    <p>Découvrez nos spécialités</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200" alt="Café 3">
+                <div class="slide-overlay">
+                    <h1>Ambiance Chaleureuse</h1>
+                    <p>Votre moment de détente</p>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev" id="prevBtn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next" id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- Section principale -->
+    <main class="main-content">
+        <section class="about">
+            <h2>À Propos de Nous</h2>
+            <p>Bienvenue dans notre café chaleureux où chaque tasse raconte une histoire. Nous sélectionnons les meilleurs grains de café du monde entier pour vous offrir une expérience gustative exceptionnelle.</p>
+        </section>
+
+        <section class="menu-section">
+            <h2>Notre Menu</h2>
+            
+            <!-- Filtres de catégories -->
+            <div class="category-filters">
+                <button class="category-btn active" data-category="tous">Tous</button>
+                <button class="category-btn" data-category="café">Café</button>
+                <button class="category-btn" data-category="glaces">Glaces</button>
+                <button class="category-btn" data-category="petit-déjeuner">Petit Déjeuner</button>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Catégorie Café -->
+                <div class="menu-item" data-category="café">
+                    <img src="https://i.pinimg.com/1200x/e6/22/97/e62297bceb8be7d0a659644ab64ded61.jpg" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>Un café corsé et intense</p>
+                    <span class="price">3.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="café">
+                    <img src="https://i.pinimg.com/736x/57/30/51/5730512538c6c2c357d239c7a55c3e45.jpg" alt="Cappuccino">
+                    <h3>Cappuccino</h3>
+                    <p>Mousse onctueuse et café parfait</p>
+                    <span class="price">4.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="café">
+                    <img src="https://i.pinimg.com/1200x/32/58/39/32583955510da20a6abdb21eb9aa7e7d.jpg" alt="Latte">
+                    <h3>Latte</h3>
+                    <p>Doux et crémeux</p>
+                    <span class="price">4.00€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="café">
+                    <img src="https://i.pinimg.com/1200x/d6/f2/e9/d6f2e9113aa8f9aef8b59a8e28bd7255.jpg" alt="Café américain">
+                    <h3>Café américain</h3>
+                    <p>Espresso allongé.</p>
+                    <span class="price">2.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                 <div class="menu-item" data-category="café">
+                    <img src="https://www.dysphagiacare.ca/sites/g/files/lpfasj961/files/2024-01/CLASSIC-HOT-CHOCOLATE-073.png" alt="Chocolat Chaud">
+                    <h3>Chocolat Chaud</h3>
+                    <p>Chocolat riche avec mousse de lait.</p>
+                    <span class="price">3.00€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="café">
+                    <img src="https://dashofhoney.ca/wp-content/uploads/2020/11/641366EE-CD57-497F-92F2-08A9421F84D4-530x530.jpeg" alt="Moka">
+                    <h3>Moka</h3>
+                    <p>Café, chocolat et lait.</p>
+                    <span class="price">4.80€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="café">
+                    <img src="https://i.pinimg.com/1200x/1a/db/53/1adb53eb8c06801046147c701e34bd99.jpg" alt="Café Glacé">
+                    <h3>Café Glacé</h3>
+                    <p>Rafraîchissant et revigorant.</p>
+                    <span class="price">4.20€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="café">
+                    <img src="https://i.pinimg.com/736x/bf/ca/8b/bfca8bb3d49cb4e0bb269404a58551a0.jpg" alt="Flat White">
+                    <h3>Flat White</h3>
+                    <p>Espresso velouté au lait.</p>
+                    <span class="price">4.30€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <!-- Catégorie Glaces -->
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/1200x/13/1f/51/131f51baf9b68adef3c1efb86b0986ac.jpg" alt="Glace Vanille">
+                    <h3>Glace Vanille</h3>
+                    <p>Classique et délicieuse</p>
+                    <span class="price">4.00€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/736x/ae/cf/01/aecf01eaafc0b4236c46c781cec3662c.jpg" alt="Glace Chocolat">
+                    <h3>Glace Chocolat</h3>
+                    <p>Riche et onctueuse</p>
+                    <span class="price">4.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/736x/02/18/0b/02180bbfb8b05c117cbef48eb521ae05.jpg" alt="Glace Fraise">
+                    <h3>Glace Fraise</h3>
+                    <p>Fraîche et fruitée</p>
+                    <span class="price">4.20€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/1200x/58/88/a8/5888a8a96fdd58b1d6d2d5a5c0fad40a.jpg" alt="Glace Pistache">
+                    <h3>Glace Pistache</h3>
+                    <p>Saveur authentique de pistache.</p>
+                    <span class="price">4.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/1200x/f5/a2/d1/f5a2d170437cb753630e61bc5810d897.jpg" alt="Glace Caramel Beurre Salé">
+                    <h3>Glace Caramel Beurre</h3>
+                    <p>Douceur sucrée.</p>
+                    <span class="price">4.80€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/1200x/6b/ab/da/6babda94ccafbf89c308fb530ec35151.jpg" alt="Glace Mangue">
+                    <h3>Glace Mangue</h3>
+                    <p>Saveur tropicale et exotique.</p>
+                    <span class="price">4.40€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/1200x/36/1c/43/361c437d20f6d73cfae26bfe2c372891.jpg" alt="Glace Stracciatella">
+                    <h3>Glace Stracciatella</h3>
+                    <p>Vanille avec éclats de chocolat.</p>
+                    <span class="price">4.30€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="glaces">
+                    <img src="https://i.pinimg.com/736x/40/a5/d6/40a5d6cfbf11a750ef35a0bf41fa2d1b.jpg" alt="Glace Citron">
+                    <h3>Glace Citron</h3>
+                    <p>Acidulée et rafraîchissante.</p>
+                    <span class="price">4.00€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <!-- Catégorie Petit Déjeuner -->
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/736x/6f/d1/9c/6fd19ce547ef7319e53a6ea37c18bfd9.jpg" alt="Croissant">
+                    <h3>Croissant</h3>
+                    <p>Croustillant et beurré</p>
+                    <span class="price">2.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/1200x/48/cc/64/48cc64f25a94000e2f2d56a2f0065143.jpg" alt="Pain au Chocolat">
+                    <h3>Pain au Chocolat</h3>
+                    <p>Chocolat fondant</p>
+                    <span class="price">2.80€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/736x/16/03/67/160367991dddc31643ccce68322e567e.jpg" alt="Muffin">
+                    <h3>Muffin</h3>
+                    <p>Moelleux et savoureux</p>
+                    <span class="price">3.00€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/736x/5d/ee/af/5deeafaa8d2fe4770084298acda9d01c.jpg" alt="Pancakes">
+                    <h3>Pancakes</h3>
+                    <p>Trois pancakes moelleux avec sirop d'érable.</p>
+                    <span class="price">6.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/1200x/62/75/63/6275636cc258890470157e9069c12dfd.jpg" alt="Toast Avocat">
+                    <h3>Toast Avocat</h3>
+                    <p>Pain grillé avec avocat écrasé et œuf poché.</p>
+                    <span class="price">7.00€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/1200x/5e/54/50/5e5450ffa3a72094d7d09a0c5cb71880.jpg" alt="Granola Bowl">
+                    <h3>Granola Bowl</h3>
+                    <p>Yaourt grec, granola et fruits frais.</p>
+                    <span class="price">5.50€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/736x/0a/f2/bf/0af2bf6e451320401c49f18d69135ffc.jpg" alt="Omelette Fermière">
+                    <h3>Omelette Fermière</h3>
+                    <p>Omelette aux légumes et fromage.</p>
+                    <span class="price">6.80€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="menu-item" data-category="petit-déjeuner">
+                    <img src="https://i.pinimg.com/1200x/6b/4f/fe/6b4ffeec6e0da2dd4f239c4358ab3ba7.jpg" alt="Brioche Perdue">
+                    <h3>Brioche Perdue</h3>
+                    <p>Pain perdu avec fruits rouges et crème.</p>
+                    <span class="price">6.00€</span>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button id="prevPage" class="page-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="page-numbers" id="pageNumbers"></div>
+                <button id="nextPage" class="page-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+    </div>
+    <!-- Fin Page Accueil -->
+
+    <!-- Page À Propos -->
+    <div class="page-content" id="page-apropos">
+        <main class="main-content">
+            <section class="about-section">
+                <h1><i class="fas fa-coffee"></i> Notre Histoire</h1>
+                <p>Fondé en 2015, Mon Café est devenu un lieu incontournable pour les amateurs de café à Paris. Notre passion pour le café nous pousse à rechercher constamment les meilleurs grains du monde entier.</p>
+                
+                <p>Chaque tasse que nous servons est préparée avec soin et expertise, utilisant des méthodes traditionnelles combinées aux techniques modernes pour extraire les meilleures saveurs de chaque grain.</p>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-coffee"></i>
+                        <h3>10,000+</h3>
+                        <p>Tasses servies</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <h3>5,000+</h3>
+                        <p>Clients satisfaits</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-award"></i>
+                        <h3>15+</h3>
+                        <p>Récompenses</p>
+                    </div>
+                </div>
+                
+                <!-- Section Découvrir Notre Restaurant -->
+                <div class="cross-link-section">
+                    <div class="cross-link-card">
+                        <div class="cross-link-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h2>Découvrez Notre Restaurant</h2>
+                        <p>En plus de notre café, nous avons également un restaurant gastronomique qui propose une cuisine d'exception. Découvrez nos plats raffinés et notre ambiance élégante.</p>
+                        <a href="../restaurant/index.html" class="cross-link-btn">
+                            <span>Visiter Restaurant Délices</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Fin Page À Propos -->
+
+    <!-- Page Contact -->
+    <div class="page-content" id="page-contact">
+        <main class="main-content">
+            <section class="contact-page">
+                <h1><i class="fas fa-envelope"></i> Contactez-Nous</h1>
+                <p class="contact-intro">
+                    Nous serions ravis d'avoir de vos nouvelles ! N'hésitez pas à nous contacter pour toute question, suggestion ou réservation.
+                </p>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2><i class="fas fa-info-circle"></i> Informations de Contact</h2>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Adresse</h3>
+                                <p>123 Anfa<br>Casablanca</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Téléphone</h3>
+                                <p>+212690702486</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="/cdn-cgi/l/email-protection#6f0c00011b0e0c1b2f0200010c0e090a41091d"><span class="__cf_email__" data-cfemail="74171b1a0015170034191b1a171512115a1206">[email&#160;protected]</span></a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h3>WhatsApp</h3>
+                                <p><a href="https://wa.me/212690702486" target="_blank">+212 690 702 486</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-hours">
+                        <h2><i class="fas fa-clock"></i> Horaires d'Ouverture</h2>
+                        
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span class="day">Lundi - Vendredi</span>
+                                <span class="time">7h00 - 20h00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Samedi</span>
+                                <span class="time">8h00 - 22h00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Dimanche</span>
+                                <span class="time">8h00 - 22h00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-social">
+                    <h2><i class="fas fa-share-alt"></i> Suivez-Nous sur les Réseaux Sociaux</h2>
+                    <div class="social-links-large">
+                        <a href="https://www.facebook.com/profile.php?id=61579912872839" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/s___0_9/" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://wa.me/212690702486" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-map">
+                    <h2><i class="fas fa-map"></i> Nous Trouver</h2>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.3414970156744593!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d877937b0f%3A0xb975fcfa192f84d4!2sNotre-Dame%20de%20Paris!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr" width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Fin Page Contact -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Mon Café</h3>
+                <p>Votre destination préférée pour un café de qualité et une ambiance conviviale.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Anfa, Casablanca</p>
+                <p><i class="fas fa-phone"></i>+212690702486</p>
+                <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection#2645494852474552664b494845474043084054"><span class="__cf_email__" data-cfemail="d2b3b0b6b7a0a0b3babfb3bcb7b0a0bbbcbbe4e492b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lundi - Vendredi: 7h - 20h</p>
+                <p>Samedi - Dimanche: 8h - 22h</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61579912872839" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/s___0_9/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/212690702486" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mon Café. Tous droits réservés.</p>
+        </div>
+    </footer>
+    </div>
+    <!-- Fin Main Content Wrapper -->
+
+    <!-- Panier Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Votre Panier</h2>
+                <button class="close-cart" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="customer-form">
+                    <h3><i class="fas fa-user"></i> Vos Coordonnées</h3>
+                    <div class="form-group">
+                        <label for="customerName">Nom *</label>
+                        <input type="text" id="customerName" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerFirstName">Prénom *</label>
+                        <input type="text" id="customerFirstName" placeholder="Votre prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email *</label>
+                        <input type="email" id="customerEmail" placeholder="votre.email@exemple.com" required>
+                    </div>
+                </div>
+                <p class="empty-cart">Votre panier est vide</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">0.00€</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">
+                    <i class="fas fa-check"></i> Commander
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
